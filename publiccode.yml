@@ -4,14 +4,20 @@ publiccode-yaml-version: "http://w3id.org/publiccode/version/0.Invalid"
 # NO NAME AND OTHER INVALID ATTRIBUTES! #
 #########################################
 
+applicationSuite: MegaProductivitySuite
+url: "htp://example.com"        # URL of this repository
+landingURL: "https://developers.italia.it"
+
+isBasedOn: "https://github.com/italia/developers.italia.it.git"   # The original repository, "Otello"
+softwareVersion: "1.0"                                        # Last stable version
+releaseDate: 2017-04-15                     # Date of last stable software release
+logo: tests/img/logo.png
+monochromeLogo: tests/img/logo-mono.svg
+
 inputTypes:
   - text/plain
 outputTypes:
   - text/plain
-
-platforms:                   # or Windows, Mac, Linux, etc.
-  - android
-  - ios
 
 tags:
   - calendar
@@ -28,12 +34,6 @@ tags:
   - security
   - sports
 
-freeTags:
-  eng:
-    - english-free-tag
-  ita:
-    - tag-libero-italiano
-
 usedBy:
   - Comune di Firenze
   - Comune di Roma
@@ -41,8 +41,6 @@ usedBy:
 roadmap: "https://designers.italia.it/roadmap/"
 
 developmentStatus: development
-
-softwareType: "standalone"
 
 intendedAudience:
   onlyFor:
@@ -83,19 +81,22 @@ description:
        - Has zero bugs
        - Solves all the problems of the world
     screenshots:
-       - img/sshot1.png
-       - img/sshot2.png
-       - img/sshot3.png
+       - tests/img/sshot1.png
+       - tests/img/sshot2.png
+       - tests/img/sshot3.png
     videos:                             # Demo videos of the software
        - https://www.youtube.com/watch?v=RaHmGbBOP84
     awards:
        - 1st Price Software of the year
+    freeTags:
+      - freeTag
+      - FreeoloTag
 
 legal:
   license: AGPL-3.0-or-later        # SPDX expression of license
   mainCopyrightOwner: City of Chicago
   repoOwner: City of Chicago
-  authorsFile: AUTHORS              # file listing copyright information
+  authorsFile: tests/AUTHORS              # file listing copyright information
 
 maintenance:
   type: "contract"
@@ -129,7 +130,7 @@ localisation:
     - fra
     - deu
 
-dependencies:             # List of dependencies. The only mandatory list is the proprietary one
+dependsOn:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
     - name: MySQL
       versionMin: "1.1"
@@ -157,7 +158,7 @@ it:
 
   riuso:
     # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
-    codiceIPA: InvalidIPA
+    codiceIPA: c_h501
 
   spid: yes
   pagopa: yes
